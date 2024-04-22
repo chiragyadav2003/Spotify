@@ -2,11 +2,28 @@
 
 import { TbPlaylist } from "react-icons/tb";
 import { AiOutlinePlus } from "react-icons/ai";
+import { useAuthModal } from "@/hooks/useAuthModal";
+import { useUser } from "@/hooks/useUser";
+import { useUploadModal } from "@/hooks/useUploadModal ";
 
 
 export function Library() {
+
+    const authModal = useAuthModal()
+    const { user } = useUser()
+    const uploadModal = useUploadModal()
+
+
     const onClick = () => {
-        //handle upload later
+        // user can only add favourites only if he is logged in , if not then show login modal
+        if (!user) {
+            return authModal.onOpen()
+        }
+
+        //TODO - check for subscription
+
+        // if all good, then open modal/dialog for adding song to favourite
+        return uploadModal.onOpen()
     }
 
     return (
