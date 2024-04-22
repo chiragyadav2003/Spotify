@@ -33,7 +33,7 @@ const Modal = ({ isOpen, onChange, title, description, children }: ModalProps) =
                         <div>
                             {children}
                         </div>
-                        {/* to close dialogue */}
+                        {/* ---to close dialogue--- */}
                         <Dialog.Close asChild>
                             <button className=" text-neutral-400 hover:text-white transition absolute top-[10px] right-[10px] inline-flex size-[25px] appearance-none items-center justify-center rounded-full focus:outline-none ">
                                 <IoMdClose />
