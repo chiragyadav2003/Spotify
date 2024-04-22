@@ -1,6 +1,9 @@
 "use client"
 
+// ----provider for handling modals(dialogue for auth, upload, subscription)----
+
 import AuthModal from "@/components/authModal";
+import UploadModal from "@/components/uploadModal";
 import { useEffect, useState } from "react";
 
 
@@ -17,6 +20,7 @@ const ModalProvider = () => {
     return (
         <>
             <AuthModal />
+            <UploadModal />
         </>
     )
 }
