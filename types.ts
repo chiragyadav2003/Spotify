@@ -1,5 +1,13 @@
-import { PropsWithChildren } from "react";
 import Stripe from "stripe"
+
+export interface Song {
+    id: string;
+    user_id: string;
+    author: string;
+    title: string;
+    song_path: string;
+    file_path: string;
+}
 
 export interface UserDetails {
     id: string;
