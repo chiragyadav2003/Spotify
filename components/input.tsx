@@ -16,7 +16,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 const Input = forwardRef<HTMLInputElement, InputProps>(({
     className,
-    type = "text", disabled,
+    type = "text",
     ...props
 }, ref) => {
     return (

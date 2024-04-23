@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 // interface ButtonProps {
@@ -13,12 +14,12 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
 }
 
-export function Button({
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
     children,
     className,
     type = "button",// Defaulting to 'button' to avoid unintentional submits
     ...props // Spread remaining props to handle onClick, disabled, etc.
-}: ButtonProps) {
+}, ref) => {
     return (
         <button
             type={type}
@@ -28,4 +29,8 @@ export function Button({
             {children}
         </button>
     )
-}
+})
+
+Button.displayName = "Button"
+
+export { Button }
