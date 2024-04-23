@@ -7,10 +7,11 @@ import { BiSearch } from "react-icons/bi"
 import { Box } from "./box";
 import { SidebarItem } from "./sidebarItem";
 import { Library } from "./library";
+import { Song } from "@/types";
 
 
 export function Sidebar(
-    { children }: { children: React.ReactNode }) {
+    { children, songs }: { children: React.ReactNode, songs: Song[] }) {
 
     const pathname = usePathname()
 
@@ -46,7 +47,7 @@ export function Sidebar(
                     </div>
                 </Box>
                 <Box className=" overflow-y-auto h-full">
-                    <Library />
+                    <Library songs={songs} />
                 </Box>
             </div>
             {/*  'flex-1' class sets the flex-grow property to 1, allowing the flex item to grow to fill the available space */}

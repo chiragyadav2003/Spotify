@@ -1,8 +1,16 @@
+import getSongs from "@/actions/getSongs";
 import { Header } from "@/components/header";
 import { ListItem } from "@/components/listItem";
 import likedImage from "@/public/images/liked.jpeg"
+import PageContent from "./_components/pageContent";
 
-export default function Home() {
+//new data after every reload, remove cache
+export const revalidate = 0;
+
+export default async function Home() {
+
+  const songs = await getSongs()
+
   return (
     <div className=" bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
       {/* header */}
@@ -29,9 +37,7 @@ export default function Home() {
             Newest songs
           </h1>
         </div>
-        <div>
-          List of songs !
-        </div>
+        <PageContent songs={songs} />
       </div>
     </div>
   );
