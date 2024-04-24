@@ -23,7 +23,7 @@ function SongItem({ data, onClick }: SongItemProps) {
                 <Image
                     className=" object-cover"
                     alt="song-image"
-                    src={imagePath || "/images/liked.png"}
+                    src={imagePath || "/images/liked.jpeg"}
                     fill
                 />
             </div>

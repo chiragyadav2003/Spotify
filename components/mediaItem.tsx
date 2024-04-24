@@ -26,7 +26,7 @@ function MediaItem({ onClick, data }: MediaItemProps) {
             >
                 <Image
                     alt="song-image"
-                    src={imageUrl || "/images/liked.png"}
+                    src={imageUrl || "/images/liked.jpeg"}
                     fill
                     className=" object-cover"
                 />
