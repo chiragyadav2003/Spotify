@@ -1,9 +1,14 @@
 "use client"
 
 import SongItem from "@/components/songItem"
+import useOnPlay from "@/hooks/useOnPlay"
 import { Song } from "@/types"
 
 function PageContent({ songs }: { songs: Song[] }) {
+
+    //create playlist of user uploaded songs
+    const onPlay = useOnPlay(songs)
+
     if (songs.length === 0) {
         return (
             <div className="mt-4 text-neutral-400">
@@ -19,7 +24,7 @@ function PageContent({ songs }: { songs: Song[] }) {
                 songs.map((song) => (
                     <SongItem
                         key={song.id}
-                        onClick={() => { }}
+                        onClick={(id: string) => onPlay(id)} //set activeId
                         data={song}
                     />
                 ))

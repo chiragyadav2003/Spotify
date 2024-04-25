@@ -7,6 +7,7 @@ import { useUser } from "@/hooks/useUser";
 import { useUploadModal } from "@/hooks/useUploadModal ";
 import { Song } from "@/types";
 import MediaItem from "./mediaItem";
+import useOnPlay from "@/hooks/useOnPlay";
 
 
 export function Library({ songs }: { songs: Song[] }) {
@@ -15,6 +16,8 @@ export function Library({ songs }: { songs: Song[] }) {
     const { user } = useUser()
     const uploadModal = useUploadModal()
 
+    //declare onPlay function which is returned by useOnPlay hook which will play a song, pass array of songs tp useOnPlay whch will set playlist itself
+    const onPlay = useOnPlay(songs);
 
     const onClick = () => {
         // user can only add favourites only if he is logged in , if not then show login modal
@@ -50,7 +53,7 @@ export function Library({ songs }: { songs: Song[] }) {
             >
                 {songs.map((song) => (
                     <MediaItem
-                        onClick={() => { }}
+                        onClick={(id: string) => onPlay(id)}
                         key={song.id}
                         data={song}
                     />
