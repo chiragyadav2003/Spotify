@@ -19,6 +19,7 @@ function MediaItem({ onClick, data }: MediaItemProps) {
     }
     return (
         <div
+            onClick={handleCLick}
             className="flex items-center gap-x-3 cursor-pointer hover:bg-neutral-800/50 w-full p-2"
         >
             <div
