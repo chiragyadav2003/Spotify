@@ -51,6 +51,7 @@ export function Sidebar(
                     </div>
                 </Box>
                 <Box className=" overflow-y-auto h-full">
+                    songs
                     <Library songs={songs} />
                 </Box>
             </div>
